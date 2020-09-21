@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-var-p-around_small">
+        <div style={backgroundStyle} class="slds-container_fluid image"></div>
+
+        <h1 class="slds-var-p-around_xx-small slds-var-m-top_x-small slds-truncate slds-text-title_caps bold-text">
+            {productName}
+        </h1>
+        <h2 class="slds-var-p-around_xx-small slds-text-body_regular">
+            Price: <lightning-formatted-number value={price} format-style="currency" currency-code="USD">
+            </lightning-formatted-number>
+        </h2>
+        <div class="slds-var-p-around_xx-small slds-text-body_small">
+            <lightning-formatted-rich-text value={description}>
+            </lightning-formatted-rich-text>
+        </div>
+        <div class="slds-var-p-around_xx-small slds-text-body_small slds-container_fluid">
+            <lightning-input step="1" class="slds-var-p-horizontal_xx-small slds-float_left" variant="label-hidden"
+                type="number" value={quantity} label="Quantity" onchange={handleChange}>
+            </lightning-input>
+            <lightning-button class="slds-var-p-horizontal_xx-small slds-float_right" variant="brand"
+                label="Add to Cart" title="Add to Cart" onclick={handleClick}>
+            </lightning-button>
+        </div>
+    </div>
+</template>

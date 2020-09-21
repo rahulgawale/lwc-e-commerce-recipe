@@ -1,0 +1,11 @@
+.image {
+	height: 300px;
+	background-position: center;
+	background-size: cover;
+	border-radius: 5px;
+	padding: var(--lwc-borderWidthThin, 1px) !important;
+}
+
+.bold-text {
+	font-weight: bold;
+}
