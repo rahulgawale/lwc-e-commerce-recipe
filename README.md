@@ -30,6 +30,14 @@ To test your component follow the below steps
 3. put add your component inside the `.app` file.
 4. then click the `preview`/`update preview` button on the right hand side.
 
+## Sample code
+
+```html
+<aura:application extends="force:slds">
+	<c:productTile></c:productTile>
+</aura:application>
+```
+
 ---
 
 # Salesforce App
