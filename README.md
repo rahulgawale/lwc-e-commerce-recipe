@@ -21,6 +21,15 @@ This project is developed part of the Lightning web component work shop series. 
 2. <a target="_blank" href="https://developer.salesforce.com/docs/component-library/overview/components">Component reference guide for LWC</a>
 3. <a target="_blank" href="https://trailhead.salesforce.com/content/learn/modules/apex_database">Apex Programming Basics</a>
 
+# Test your component
+
+To test your component follow the below steps
+
+1. open the developer console from your org.
+2. then create a new lightning application(aura)
+3. put add your component inside the `.app` file.
+4. then click the `preview`/`update preview` button on the right hand side.
+
 ---
 
 # Salesforce App
