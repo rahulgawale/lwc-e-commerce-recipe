@@ -3,23 +3,43 @@
         <div style={backgroundStyle} class="slds-container_fluid image"></div>
 
         <h1 class="slds-var-p-around_xx-small slds-var-m-top_x-small slds-truncate slds-text-title_caps bold-text">
-            {productName}
+            {product.Name}
         </h1>
         <h2 class="slds-var-p-around_xx-small slds-text-body_regular">
-            Price: <lightning-formatted-number value={price} format-style="currency" currency-code="USD">
-            </lightning-formatted-number>
+            <lightning-layout>
+                <lightning-layout-item size="6" class="slds-var-p-right_xx-small">
+                    Price:&nbsp;
+                    <lightning-formatted-number value={product.Display_Price__c} format-style="currency"
+                        currency-code="USD">
+                    </lightning-formatted-number>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" class="slds-var-p-right_xx-small bold-text">
+                    Total:&nbsp;
+                    <lightning-formatted-number value={totalPrice} format-style="currency" currency-code="USD">
+                    </lightning-formatted-number>
+                </lightning-layout-item>
+            </lightning-layout>
         </h2>
-        <div class="slds-var-p-around_xx-small slds-text-body_small">
-            <lightning-formatted-rich-text value={description}>
+        <!-- <div class="slds-var-p-around_xx-small slds-text-body_small">
+            <lightning-formatted-rich-text value={product.description}>
             </lightning-formatted-rich-text>
-        </div>
+        </div> -->
         <div class="slds-var-p-around_xx-small slds-text-body_small slds-container_fluid">
-            <lightning-input step="1" class="slds-var-p-horizontal_xx-small slds-float_left" variant="label-hidden"
-                type="number" value={quantity} label="Quantity" onchange={handleChange}>
-            </lightning-input>
-            <lightning-button class="slds-var-p-horizontal_xx-small slds-float_right" variant="brand"
-                label="Add to Cart" title="Add to Cart" onclick={handleClick}>
-            </lightning-button>
+            <lightning-layout>
+                <lightning-layout-item size="6" class="slds-var-p-right_xx-small">
+                    <lightning-input step="1" variant="label-hidden" type="number" value={quantity} label="Quantity"
+                        onchange={handleChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" class="slds-var-p-left_xx-small">
+                    <lightning-button if:false={isAddedToCart} variant="success" label="Add to cart" title="Add to cart"
+                        onclick={handleAddToCart}>
+                    </lightning-button>
+                    <lightning-button if:true={isAddedToCart} variant="destructive" label="Remove" title="Remove"
+                        onclick={handleRemoveFromCart}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
         </div>
     </div>
 </template>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" class="slds-var-p-bottom_small">
+
+            <c-product-search-form onsearch={handleSearch}></c-product-search-form>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12" class="slds-var-p-bottom_small">
+
+            <c-products-list products={wiredProducts.data}></c-products-list>
+
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
