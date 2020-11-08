@@ -1,8 +1,32 @@
 <template>
-    <lightning-card variant="Narrow" title="Filter Products" icon-name="standard:filter">
-        <div class="slds-var-p-around_small">
-            <lightning-checkbox-group name="Type" label="Type" options={options} value={value}>
-            </lightning-checkbox-group>
-        </div>
-    </lightning-card>
+	<lightning-card variant="Narrow" title="Filter Products" icon-name="standard:filter">
+		<lightning-layout multiple-rows>
+
+			<lightning-layout-item size="12" padding="around-small" if:true={familyPicklistValues.data}>
+				<lightning-checkbox-group name="families" label="Category" options={familyPicklistValues.data.values}
+					value={families} onchange={handleChange}>
+				</lightning-checkbox-group>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="12" padding="around-small">
+				<lightning-slider name="minPrice" label="Min Price" value={minPrice} onchange={handleChange}>
+				</lightning-slider>
+				<lightning-slider name="maxPrice" label="Max Price" value={maxPrice} onchange={handleChange}>
+				</lightning-slider>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="12" padding="around-small">
+				<lightning-input type="text" variant="standard" name="brand" label="Brand" placeholder="Enter Brand"
+					onchange={handleChange}>
+				</lightning-input>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="12" padding="around-small" if:true={sizesPicklistValues.data}>
+				<lightning-combobox name="size" label="Size" value={size} placeholder="Select Size"
+					options={sizesPicklistValues.data.values} onchange={handleChange}>
+				</lightning-combobox>
+			</lightning-layout-item>
+
+		</lightning-layout>
+	</lightning-card>
 </template>

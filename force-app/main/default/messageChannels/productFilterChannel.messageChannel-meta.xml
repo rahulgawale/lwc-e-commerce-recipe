@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>ProductFilterChannel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Sends filters to other components.</description>
+    <lightningMessageFields>
+        <fieldName>filtersData</fieldName>
+        <description>
+            Obejct that contains the filter criterias for product
+        </description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>location</fieldName>
+        <description>
+            Obejct that contains the filter criterias for product
+        </description>
+    </lightningMessageFields>
+</LightningMessageChannel>
